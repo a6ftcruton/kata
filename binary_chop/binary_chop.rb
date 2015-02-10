@@ -7,43 +7,44 @@ class BinaryChop
   end
 
   def chop
-    #return -1 if element not in array
     if search_item_absent?
       -1
-    #return 0 if only element in array is also match
     elsif array.length == 1
       0 
-    elsif midpoint_matches_search_item 
-      #return index of search item
+    elsif midpoint_matches_search_item?
       array.index(search_item)
+    else
+      return_index_of_search_item
     end
   end
 
-    def search_item_absent?
-      !array.include?(search_item)
+  def return_index_of_search_item
+    upper_bound = array.length - 1
+    lower_bound = 0
+    while upper_bound >= lower_bound
+      midpoint = (upper_bound + lower_bound) / 2
+      if array[midpoint] > search_item 
+        upper_bound = midpoint - 1
+      elsif array[midpoint] < search_item
+        lower_bound = midpoint + 1
+      else
+        return midpoint
+      end
     end
+  end
 
-    def midpoint_matches_search_item 
-      midpoint == search_item
-    end
+  def search_item_absent?
+    !array.include?(search_item)
+  end
 
-    def midpoint
-      (array.length - 1) / 2
-    end
+  def midpoint_matches_search_item? 
+    array[midpoint] == search_item
+  end
 
-#    if !array.include?(search_item)
-#      -1
-#    elsif found_match?(search_item, array)
-#      find_middle(array)  
-#   end
-#
-#    def find_middle(array)
-#      array.length / 2
-#    end
-#
-#    def found_match?(search_item, array)
-#      find_middle(array) == search_item 
-#    end
+  def midpoint
+    (array.length - 1) / 2
+  end
+
   end
 
 
