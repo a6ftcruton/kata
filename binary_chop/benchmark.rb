@@ -18,6 +18,11 @@ Benchmark.ips do |r|
     chop(799, test_array)
   end
 
+  r.report 'built_in_bsearch' do |times|
+    test_array.bsearch(32)
+    test_array.bsearch(799)
+  end
+
   r.compare!
 
 end
