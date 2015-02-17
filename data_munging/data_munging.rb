@@ -1,3 +1,5 @@
+#  Without classes:
+#  ---------------------------------------------------
 #  file = File.open('weather.dat', "r")
 #  lines = file.each_line.map(&:split)
 #
@@ -24,14 +26,12 @@ class ParseWeatherData
 
   def min_temp_difference
     hash = Hash.new
-    file_rows.map do |l| 
-        hash[l[0]] = (l[1].to_f - l[2].to_f) 
-    end
+    file_rows.map { |l| hash[l[0]] = (l[1].to_f - l[2].to_f) } 
     hash
   end
   
   def valid_temps
-    min_temp_difference.select { |k,v| v > 0 }
+    min_temp_difference.select { |k,v| k.to_i > 0 }
   end
   
   def smallest_temp_difference
