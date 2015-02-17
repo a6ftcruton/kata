@@ -8,10 +8,6 @@ describe 'tdd_munging' do
 #    1  88    59    74
 #    2  79    63    71
   
-  it 'parses a .dat file into rows' do
-    expect(file.rows.count).to eq 3 
-  end
-
   it 'calculates temp diff for each row' do
     diffs = file.calculate_temp_diff
 
