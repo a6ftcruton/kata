@@ -28,7 +28,3 @@ class TddMunging
   end
 
 end
-
-r = TddMunging.new('./weather.dat')
-diffs = r.calculate_temp_diff
-puts r.day_of_smallest_temp_range(diffs)
