@@ -5,7 +5,6 @@ class Palindrome
     @word = word.downcase.gsub('\s', '')
   end
 
-  #refactor to use reduce
   def reversed
     reversed = ""
     split = word.split("")
@@ -17,5 +16,3 @@ class Palindrome
     reversed == word
   end
 end
-p = Palindrome.new("dad")
-puts p.palindrome?
