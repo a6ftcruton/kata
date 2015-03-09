@@ -44,3 +44,22 @@ function reverse(str) {
 myStr = "There once was a man from Mississippi.";
 printResults(reverse, myStr);
 
+/*Build a function duplicate() that takes an array of numbers and returns an array with those numbers appearing twice:
+ * e.g.  duplicate([1, 2, 3, 4]) // =>  [1, 2, 3, 4, 1, 2, 3, 4] */
+
+// 1 - for loop
+function duplicate(numbers) {
+  var dup = numbers.toString().split(",");
+  for(i = 0; i < dup.length; i++) {
+    numbers.push( parseInt(dup[i]) );
+  }
+  return numbers;
+}
+
+// 2 - much cleaner
+function duplicate(numbers) {
+  var dup = numbers.concat(numbers);
+  return dup;
+}
+numbers = [1, 2, 3];
+printResults(duplicate, numbers);
