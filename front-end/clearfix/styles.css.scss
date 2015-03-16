@@ -12,7 +12,7 @@ body{ padding: 2em; }
   margin: 2em 0;
   
   .headline{
-    position: absolute;
+    position: absolute; // <-- change this to relative and then adjust the "top" value to keep this outside parent
     left: 0; top: -1.2em;
   }
 }
@@ -27,4 +27,19 @@ body{ padding: 2em; }
   top: 0;
   right: 0;
   bottom: 0;
+}
+// the clearfix hack via Nicolas Gallagher --> just add this class to the parent of the floated div
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
 }

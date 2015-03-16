@@ -1,0 +1,25 @@
+*, :before, :after{ box-sizing: border-box; }
+body{ padding: 2em; }
+
+button{
+  border: none; outline: none;
+  background: lightblue;
+  text-decoration: none;
+  padding: 1em;
+}
+
+.module{
+/*  -webkit-transition: all 0.5s ease;
+ transition: all 0.5s ease; */
+  display: none;
+  padding: 4em; 
+  margin: 2em 0;
+  background-color: white;
+}
+
+.visible {
+  display: block;
+  padding: 6em;
+  margin: 0;
+  background-color: gray;
+}
