@@ -1,0 +1,30 @@
+*, :before, :after{ box-sizing: border-box; }
+body{ padding: 2em; }
+
+.parent,
+.child{
+  padding: 2em;
+}
+
+.parent{
+  background: pink;
+  position: relative;
+  margin: 2em 0;
+  
+  .headline{
+    position: absolute;
+    left: 0; top: -1.2em;
+  }
+}
+
+.child{
+  background: lightblue;
+  width: 16em;
+  // Change:
+  // float: right; margin-left: 2em;
+  // to:
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
