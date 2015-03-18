@@ -63,3 +63,31 @@ function duplicate(numbers) {
 }
 numbers = [1, 2, 3];
 printResults(duplicate, numbers);
+
+/*Build a function that takes in a string and returns the same string with spaces added between each letter */
+// 1 -- using for loop (just to try a different approach)
+
+function spacify(str) {
+  var newString = "";
+  for(i = 0; i < str.length; i++) {
+    newString += (str[i] + " ");
+  }
+  return newString;
+}
+// 1 -- cleanest implementation
+// function spacify(str) {
+//   return str.split('').join(' ');
+// }
+
+myInput = ("hello world");
+printResults(spacify, myInput)
+
+/* Implement "spacify" function as a method on the String object itself */
+//   allowing you to call it like this: "hello world".spacify();
+
+String.prototype.spacify = function() {
+  return this.split('').join(' ');
+}
+
+console.log("You called String.spacify and got:");
+console.log("hello world".spacify() );
