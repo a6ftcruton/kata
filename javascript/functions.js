@@ -91,3 +91,21 @@ String.prototype.spacify = function() {
 
 console.log("You called String.spacify and got:");
 console.log("hello world".spacify() );
+
+/*Interlude: function declaration vs. function expression  */
+// -function declaration defines a named function variable without variable assignment:
+//     e.g.   function bar() { return 3; }
+//     -when hoisted, the entire function is hoisted --> e.g. var a;
+
+// -function expressions define functions through variable assignment--the function can be named or anonymous:
+//     e.g.   var a = function bar() { return 3; }
+//            var a = function() { return 3; }
+//     -when hoisted, only the variable name is hoisted --> e.g. var a;
+
+/* Call and apply */
+//
+// Call - accepts a list of arguments
+// Apply - accepts an array of arguments (really useful in tandem with a function that accepts a variable number of arguments, like Math.max)
+//       - apply is even more useful in tandem with the `arguments` variable --the special local variable defined within thescope of all function.
+// var numbers = [3, 1, 2, 5, 8, 6];
+// Math.max.appy(null, numbers); // null 
