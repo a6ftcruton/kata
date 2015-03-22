@@ -4,27 +4,18 @@ class Anagrams
 
   def permutations(word)
     w = word.downcase.split('')
-    w.permutation.to_a.map {|p| p.join}
+    w.permutation.map(&:join)
   end
  
-  # def file
-  #   Net::HTTP.get('http://codekata.com/data/wordlist.txt')
-  # end
+  def all(word)
+    permutations(word).reduce([]) {|acc, entry| acc << entry if word?(entry); acc}
+  end
 
-  # def valid_words
-  #   File.open(file, "r").each_line { |line| puts line } 
-  # end
+  private
 
-
-  # def solve(word)
-  #   permutations(word).collect { |word| valid_words.include?(word) }
-  # end
-
-  # private
-
-  # def is_word?(word)
-  #   list = WordList.new
-  #   list.valid_words.include?(word)
-  # end
+  def word?(word)
+    #if line starts with first 3 letters in word...
+    File.foreach('./valid_words.txt').any? { |line| line.scrub.downcase.strip.eql?(word) }
+  end
 
 end

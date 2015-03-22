@@ -1,11 +1,12 @@
 require './word_list'
+require 'minitest/autorun'
+require 'minitest/pride'
 
 class WordListTest < MiniTest::Test
 
-  def test_it_reads_a_file
+  def test_it_writes_a_file
     list = WordList.new
-    assert list.file.class
-    # list.valid_words
-    # assert_equal "a", list.first
+    word_list = list.write_valid_words_to_file
+    assert('./valid_words.txt') 
   end
 end
