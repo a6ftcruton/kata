@@ -14,8 +14,10 @@ class Anagrams
   private
 
   def word?(word)
-    #if line starts with first 3 letters in word...
-    File.foreach('./valid_words.txt').any? { |line| line.scrub.downcase.strip.eql?(word) }
+    pattern = /\b(?:#{word})\b/
+    File.foreach('./valid_words.txt').any? do |line| 
+      line.scrub.strip.eql?(word) # 115 seconds :( 
+    end
   end
 
 end
