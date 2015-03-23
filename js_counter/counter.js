@@ -18,16 +18,32 @@ console.log(c.incr());
 console.log("c + 1 = " + (c + 1));
 console.log("c > 1 = " + c > 1);
 
+// Solution using function declaration
+// -------------------------------------------------------------------
+
+function CounterA(){
+  this.value = 0;
+  this.incr = function() { return this.value++ };
+  this.valueOf = function() { return this.value };
+}
+
+var z = new CounterA();
+console.log(z)
+console.log(z.incr());
+console.log("z + 1 = " + (z + 1) );
+console.log("z > 1 = " + (z > 1) );
+console.log(z.incr());
+console.log("z > 1 = " + (z > 1) );
 
 // Solution using function expression
 // -------------------------------------------------------------------
-var Counter = function() {
+var CounterB = function() {
   this.value = 0;
   this.incr = function() { return this.value ++ };
   this.valueOf = function() { return this.value };
 }
 
-var x = new Counter();
+var x = new CounterB();
 console.log(x)
 console.log(x.incr());
 console.log("x + 1 = " + (x + 1) );
