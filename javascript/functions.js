@@ -109,3 +109,17 @@ console.log("hello world".spacify() );
 //       - apply is even more useful in tandem with the `arguments` variable --the special local variable defined within thescope of all function.
 // var numbers = [3, 1, 2, 5, 8, 6];
 // Math.max.appy(null, numbers); // null 
+
+/// Return longest word in a sentence
+//---------------------------------------
+
+function longestWord(sentence) {
+  var words = sentence.split(' ');
+  var lengths = words.sort(function(a, b) {
+    return a.length < b.length;
+  });
+  return lengths[0];
+}
+
+myInput = ("Which state has the longest name: Carolina, Mississippi, Massachussettes, Delaware?");
+printResults(longestWord, myInput)
