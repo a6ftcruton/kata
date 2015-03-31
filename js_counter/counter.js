@@ -51,3 +51,20 @@ console.log("x > 1 = " + (x > 1) );
 console.log(x.incr());
 console.log("x > 1 = " + (x > 1) );
 
+// Solution using Module pattern
+// -----------------------------------------------------------------
+
+function CounterC() {
+  var value = 0;
+  this.incr = function() { value++ };
+  this.valueOf = function() { return value };
+}
+
+var m = new CounterC();
+console.log(m.valueOf());
+m.incr();
+console.log("m + 1 = " + (m + 1) );
+console.log("m > 1 = " + (m > 1) );
+m.incr();
+console.log(m.valueOf());
+console.log("m > 1 = " + (m > 1) );
