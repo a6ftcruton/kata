@@ -3,7 +3,7 @@
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 //
 
-var fibonacci = function(upper_bound) {
+var fibonacciByIndex = function(upper_bound) {
   var sequence = [1, 2];
   for(i = 2; i < upper_bound; i++) {
     var n = (sequence[sequence.length - 1] + sequence[sequence.length - 2]);
@@ -42,6 +42,7 @@ var sumEvens = function(list) {
 }
 
 
-console.log("Sum of all fibonacci numbers up to 30: " + sumAll( fibonacci(30)));
-console.log("Sum of all even fibonacci numbers up to 30: " +  sumEvens(fibonacci(30)));
-console.log("Fibonacci numbers less than 4 million"  +  fibonacciLimit(4000000));
+console.log("\nSum of all fibonacci numbers up to 30: " + sumAll( fibonacciByIndex(30)));
+console.log("\nSum of all even fibonacci numbers up to 30: " +  sumEvens(fibonacciByIndex(30)));
+console.log("\nSum of all fibonacci numbers up to 4 million: " + sumAll( fibonacciLimit(4000000)));
+console.log("\nSum of all even fibonacci numbers less than 4 million " + sumEvens(fibonacciLimit(4000000)));
