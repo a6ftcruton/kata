@@ -12,6 +12,18 @@ var fibonacci = function(upper_bound) {
   return sequence;
 }
 
+var fibonacciLimit = function(maxSize) {
+  var sequence = [1, 2];
+  while(sequence[sequence.length -1] < maxSize) {
+    var n = (sequence[sequence.length - 1] + sequence[sequence.length - 2]);
+    if(n > maxSize) {
+      return sequence; 
+    } else {
+      sequence.push(n);
+    }
+  }
+}
+
 var sumAll = function(list) {
   var sum = list.reduce(function(prev, curr) { 
     return prev + curr; 
@@ -32,3 +44,4 @@ var sumEvens = function(list) {
 
 console.log("Sum of all fibonacci numbers up to 30: " + sumAll( fibonacci(30)));
 console.log("Sum of all even fibonacci numbers up to 30: " +  sumEvens(fibonacci(30)));
+console.log("Fibonacci numbers less than 4 million"  +  fibonacciLimit(4000000));
